@@ -11,8 +11,9 @@ turn = random.randint(0, len(players) - 1)
 
 def displayGrid():
     os.system("cls")
-    for i in grid:
-        print(" ".join(i))
+    print("  0 1 2")
+    for i in range(3):
+        print(str(i) + " " + " ".join(grid[i]))
     print()
         
 def checkResult():
@@ -42,7 +43,7 @@ def checkResult():
     
 while True:
     displayGrid()
-    pos = input("Player " + players[turn] + ", (x y) : ").split()
+    pos = input("Player " + players[turn] + ", [x y] : ").split()
     grid[int(pos[1])][int(pos[0])] = players[turn]
     if checkResult() != 0:
         break;
